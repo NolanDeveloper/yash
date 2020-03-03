@@ -1,0 +1,38 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: dd273ae924175b5a5b9c39d8aabfc1da7eeb84b78f4b90599d2dd5102f3080f5
+
+name:           yash
+version:        0.1.0.0
+synopsis:       Yet Another Shell Implementation
+description:    Multiplatform bash-like shell
+category:       Web
+homepage:       https://github.com/nolanrus/yash#readme
+author:         Denis M.
+maintainer:     nolane16@gmail.com
+copyright:      2020 DenisM.
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+
+executable yash
+  main-is: Main.hs
+  other-modules:
+      Paths_yash
+  hs-source-dirs:
+      src
+  default-extensions: FlexibleContexts FlexibleInstances OverloadedStrings TypeApplications
+  build-depends:
+      attoparsec
+    , base
+    , containers
+    , mtl
+    , process
+    , text
+  default-language: Haskell2010
