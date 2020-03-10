@@ -25,6 +25,7 @@ dependencies:
     - mtl
     - process
     - text
+    - text-icu
 
 executables:
   yash:

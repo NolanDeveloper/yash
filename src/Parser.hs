@@ -14,7 +14,7 @@ import Control.Applicative                              ( (<|>) )
 import qualified Data.Attoparsec.Text as At         
 import System.Exit                                      ( ExitCode(ExitSuccess, ExitFailure) )
 import App                                              ( MonadApp, State(appEnvironment, appExitCode) )
-import Commands                                         ( Command(Exit, External, Pipe, EmptyCommand) )
+import Commands                                         ( Command(Exit, External, Pipe, EmptyCommand, Grep) )
 
 
 data Piece
@@ -133,6 +133,7 @@ buildCommand parts = Pipe <$> mapM buildSimpleCommand parts
     buildSimpleCommand (cmd : args)
         -- check if cmd is builtin
         | cmd == "exit" = makeExitCommand args
+        | cmd == "grep" = pure $ Grep args
         -- otherwise it's external
         | otherwise = pure $ External (cmd : args)
 
