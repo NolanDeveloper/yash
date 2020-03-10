@@ -1,0 +1,35 @@
+name:                yash
+version:             0.1.0.0
+synopsis:            Yet Another Shell Implementation
+description:         Multiplatform bash-like shell
+homepage:            https://github.com/nolanrus/yash#readme
+license:             BSD3
+author:              Denis M.
+maintainer:          nolane16@gmail.com
+copyright:           2020 DenisM.
+category:            Web
+extra-source-files:
+    - README.md
+
+default-extensions: 
+    - FlexibleContexts
+    - FlexibleInstances
+    - OverloadedStrings
+    - TypeApplications
+    - StandaloneDeriving
+
+dependencies:
+    - attoparsec
+    - base
+    - containers
+    - mtl
+    - process
+    - text
+
+executables:
+  yash:
+    source-dirs:      src
+    main:             Main.hs
+    ghc-options:
+        - "-Wall"
+        - "-Wmissing-import-lists"
